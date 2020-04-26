@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      
+        <%- include('partials/head.ejs'); %>
+<!--        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Blog</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+        <link rel="stylesheet" href="/add.css" />
+</head>
+<body>
+  
+
+    <%- include('partials/nav.ejs'); %>
+
+
+    <h1>Add a Post</h1>
+    <div class="container">
+        <div>
+    <form action="/blogs" id="usrArticle" method="POST">
+        name: <input type="text" name="name">
+        author: <input type="text" name="author">
+        tags: <input type="text" name="tags">
+        date: <input type="text" name="date">
+        </div><br/>
+        <div class="form-group shadow-textarea">
+        <textarea class="form-control z-depth-1" rows="10" wrap="hard" name="content" form="usrArticle" id="textArea" placeholder="Enter Text Here..."></textarea>
+        </div>
+        <input type="submit">
+    </form>
+    </div>
+
+
+
+
+    
+    
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+       
+        <%- include('partials/head.ejs'); %>
+        <link rel="stylesheet" href="blog-styles.css"/>
+</head>
+
+<body>    
+
+    <%- include('partials/nav.ejs'); %>
+        
+
+          <h1>
+                <% if(currentUser) {%>
+                  welcome <%=currentUser.username%>
+                
+               <% } else { %>
+                <!-- Welcome! -->
+            <%  } %>
+              </h1>
+              <br>
+    <main role="main" class="container">
+        <% for (let i =0; i < post.length; i++) { %>
+        <br>
+     
+        <div class="row">
+            
+            <div class="col-md-8">
+                <img class="img-responsive" width="100%" src="https://www.setaswall.com/wp-content/uploads/2017/12/Beach-Resort-Wallpaper-37-800x500.jpg">
+            </div>
+            <div class="col-md-4">
+                <br />
+                <span class="main-article-category"><%=post[i].tags; %></span>
+                <br />
+                <span class="main-article-title"><a href="/blogs/<%=post[i].id; %>"><%=post[i].name; %></a></span>
+                <br />
+                <span>By: <span class="author-name"><%=post[i].author; %></span></span>
+            </div>
+            <br/>
+          </div>
+          <hr>
+          <%  } %>
+        <br/><br/><br>
+        <span class="recent-article">Recent</span>
+        <hr/>
+
+        <div class="row">
+
+            <div class="col-md-8">
+
+                <div class="row">
+                    <div class="col-md-4">
+                            <img class="img-responsive" width="100%" src="http://via.placeholder.com/800x500">
+                    </div>
+                    <div class="col-md-8">
+                            <br />
+                            <span class="sub-article-date">August 8, 2019</span>
+                            <br />
+                            <span class="sub-article-title">This is a subarticle Name!</span>
+                            <br />
+                            <span class="sub-article-author">By: <span class="author-name">Another author</span></span>
+                            <br />
+                            <span class="sub-article-category">Article title</span>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-md-4">
+                            <img class="img-responsive" width="100%" src="http://via.placeholder.com/800x500">
+                    </div>
+                    <div class="col-md-8">
+                            <br />
+                            <span class="sub-article-date">March 8, 2019</span>
+                            <br />
+                            <span class="sub-article-title">A lot of Sub Articles!</span>
+                            <br />
+                            <span class="sub-article-author">By: <span class="author-name">Another author</span></span>
+                            <br />
+                            <span class="sub-article-category">Article title</span>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-md-4">
+                            <img class="img-responsive" width="100%" src="http://via.placeholder.com/800x500">
+                    </div>
+                    <div class="col-md-8">
+                            <br />
+                            <span class="sub-article-date">January 8, 2019</span>
+                            <br />
+                            <span class="sub-article-title">O Jeez! Another One!</span>
+                            <br />
+                            <span class="sub-article-author">By: <span class="author-name">Another author</span></span>
+                            <br />
+                            <span class="sub-article-category">Article title</span>
+                    </div>
+                </div>
+                <hr/>
+
+
+            </div>
+            <div class="col-md-4">
+                <span class="sponsors">SPONSERS</span>
+                <br/><br/>
+                <img class="img-responsive" width="100%" src="http://via.placeholder.com/600x800">
+            </div>
+        </div>
+
+    </main>
+    <footer class="page-footer font-small stylish-color-dark pt-4 mt-4">
+        <div class="footer-copyright py-3 text-center">
+            Copyright 2019: Code Decoded
+        </div>
+
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

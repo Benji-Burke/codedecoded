@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <%- include ('partials/head.ejs'); %>
+    <link rel="stylesheet" href="/add.css" />
+  </head>
+  <body>
+    <%- include ('partials/nav.ejs') %>
+<section>
+
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h1 class="card-title"><%=code.code %></h1>
+        <br />
+
+        <p class="card-text"><code class="code-text"><%=code.content; %></code></p>
+        <br />
+      </div>
+    </div>
+</section>
+    <nav>
+    <a href="/code"> <span class="back"> Back</span></a>
+    </nav>
+  </body>
+</html>
