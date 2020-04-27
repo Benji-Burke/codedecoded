@@ -1,51 +1,37 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-secondary sticky-top ">
-    <a class="navbar-brand" href="/blogs">Code Decoded</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+
+  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
       <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarToggler">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item active">
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav">
+        <a class="navbar-brand" href="/blogs">Code Decoded</a>
+          <a href="#" class="nav-item nav-link">Profile</a>
           <a class="nav-link" href="/blogs/new">POST <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="/code">CODES</a>
-        </li>
+      </div>
 
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-
-
-
+      
+        <% if(currentUser) {%>
+          <h3> welcome <%=currentUser.username%></h1>
         
-        <h1>
-          <% if(currentUser) {%>
-            welcome <%=currentUser.username%>
-          
-         <% } else { %>
-          <!-- Welcome! -->
-      <%  } %>
-        </h1>
-        
-        <% if (currentUser) {%>
-          <li class="nav-item">
-            <form action="/sessions?_method=DELETE" method="POST">
-                <input type="submit" value="Logout">
-              </form>
-            </li>
-            <%} else { %>
-
-              
-              <li><a class="nav-link" href="/sessions">Log In</a></li>
-              <li class="nav-item">
-                <a class="nav-link" href="/users/new">Register</a>
-              </li>
-              <% } %>
-            
-              
-          </ul>
-    </div>
-  </nav>
+       <% } else { %>
+        <!-- Welcome! -->
+    <%  } %>
+      
+      
+      <% if (currentUser) {%>
+        <li class="nav-item">
+          <form action="/sessions?_method=DELETE" method="POST">
+              <input type="submit" value="Logout">
+            </form>
+          </li>
+          <%} else { %>
+      <div class="navbar-nav ml-auto">
+        <a class="nav-link" href="/sessions">Login</a>
+        <a class="nav-link" href="/users/new">Register</a>
+      </div>
+      <% } %>
+  </div>
+</nav>
