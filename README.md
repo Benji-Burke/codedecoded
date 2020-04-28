@@ -14,3 +14,5 @@ We only had 1 week to work on it so overall I am very pleased with the app.
 Future plans also include a shope schema, greater user/password/access functionability.
 
 A dream of mine to have a blog about coding this is the ALPA version. Where node.js along with ejs is the framework. MongoDB. too.
+
+Eventually will move on from ejs and add mongodb and a REACT.TS front end
